@@ -56,13 +56,37 @@ function handleGuess(chosenLetter) {
     mistakes = 0;
     guessed = [];
     document.getElementById('card').setAttribute('disabled',false)
-  
+    startTimer()
     randWord();
     guessedWord();
     updateMistakes();
     generateAlphabet();
   }
-
+ function startTimer() {
+     let minute=9
+     let second=60
+     setInterval(function(){
+        if (minute == 0 && seconed==1) {
+            document.getElementById('timer').innerHTML="00:00"
+        }else{
+            second--;
+            if (second==0) {
+                minute--
+                second=60
+                if (minute==0) {
+                    minute=minute
+                }
+            if(minute.toString().length==1){
+                minute="0"+minute
+            }
+            if(second.toString().length==1){
+                second="0"+second
+            }
+            }
+        document.getElementById('timer').innerHTML=minute + ":" + second
+        }
+     },1000)
+ }
 function guessedWord() {
     hiddenWord = answer.split('').map(letter=>(guessed.indexOf(letter) >= 0? letter:"_")).join(' ');
     // console.log(hiddenWord)
