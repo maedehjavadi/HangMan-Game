@@ -39,6 +39,12 @@ function handleGuess(chosenLetter) {
     document.getElementById('mistakes').innerHTML = mistakes;
   }
   
+  function checkIfGameLost() {
+    if (mistakes === 10) {
+      document.getElementById('word').innerHTML = 'The answer was: ' + answer;
+      document.getElementById('keyboard').innerHTML = 'You Lost!!!';
+    }
+  }
 
 function guessedWord() {
     hiddenWord = answer.split('').map(letter=>(guessed.indexOf(letter) >= 0? letter:"_")).join(' ');
