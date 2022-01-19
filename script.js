@@ -27,7 +27,8 @@ function handleGuess(chosenLetter) {
       checkIfGameWon();
     } else if (answer.indexOf(chosenLetter) === -1) {
       mistakes++;
-      
+      updateMistakes();
+      checkIfGameLost();
     }
   }
   function checkIfGameWon() {
@@ -61,6 +62,6 @@ function guessedWord() {
     // console.log(hiddenWord)
     document.getElementById('word').value=hiddenWord
 }
-generateAlphabet()
-randWord()
-guessedWord()
+// generateAlphabet()
+// randWord()
+// guessedWord()
