@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <section class="border-bottom w-50">
+            <div class="row justify-content-between align-items-center p-3">
+                <div class="col-md">
+                    <h1 class="lead">HangMan Game</h1>
+                </div>
+                <div id="timer" class="col-md d-flex justify-content-center align-items-center ">
+                    <button class="btn btn-success text-white mx-2" onclick="Start()">Start</button>
+                    <div class="timer row  justify-content-center">
+                        <span class="col timer-part timer-minute">10</span>
+                        <span class="col timer-part">:</span>
+                        <span class="col timer-part timer-second">00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, ducimus.
+                </div>
+                <div class="card-body text-center">
+                  <div class="row row-cols-auto">
+                    <div id="keyboard"></div>
+                  </div>
+                  <div class="col-md align-item-center justify-content-center">
+                      <p id="guessedWord"></p>
+                      <input type="text" class="form-control text-center bg-light w-25 m-2" id="word"  aria-label="readonly input example" readonly>
+                      <input type="text" class="form-control bg-white w-25 m-2"   aria-label="readonly input example" readonly>
+                      
+                  </div>
+                  <div class="float-right">
+                      Wrong Guesses: <span id="mistake"></span>Of 10
+                  </div>
+                  <!-- <a href="#" class="btn btn-danger">Stop</a> -->
+                </div>
+              </div>
+        </section>
+    </div>
+    <script src="./script.js"></script>
+    
+    <!-- <script src="./bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script> -->
+</body>
+</html>
