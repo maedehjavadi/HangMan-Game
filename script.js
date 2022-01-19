@@ -34,9 +34,7 @@ function handleGuess(chosenLetter) {
     }
   }
   function typeWrongLetter(letter) {
-      let wrongLetter=[]
-      wrongLetter.forEach(item=>
-        )
+      
   }
   function checkIfGameWon() {
     if (hiddenWord === answer) {
@@ -49,8 +47,9 @@ function handleGuess(chosenLetter) {
   
   function checkIfGameLost() {
     if (mistakes === 10) {
-      document.getElementById('word').innerHTML = 'The answer was: ' + answer;
-      document.getElementById('keyboard').innerHTML = 'You Lost!!!';
+      
+      document.getElementById('keyboard').innerHTML = `You Lost!!!</br>The answer was: ${answer}`;
+      document.getElementById('keyboard').classList.add('h3','text-danger')
     }
   }
   function Start() {
