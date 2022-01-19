@@ -1,5 +1,5 @@
 let dictionary=[
-    "chocolate","Banana","paper","rug","woman","javascript"
+    "chocolate","banana","paper","rug","woman","javascript"
 ]
 
 let answer=''
