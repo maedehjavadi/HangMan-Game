@@ -6,7 +6,7 @@ let answer=''
 let mistakes=0
 let guessed=[]
 let hiddenWord=null
-
+document.getElementById('card').setAttribute('disable',true)
 
 function randWord() {
     answer=dictionary[Math.floor(Math.random()*dictionary.length)]
@@ -44,6 +44,16 @@ function handleGuess(chosenLetter) {
       document.getElementById('word').innerHTML = 'The answer was: ' + answer;
       document.getElementById('keyboard').innerHTML = 'You Lost!!!';
     }
+  }
+  function Start() {
+    mistakes = 0;
+    guessed = [];
+    document.getElementById('card').setAttribute('disable',false)
+  
+    randWord();
+    guessedWord();
+    updateMistakes();
+    generateAlphabet();
   }
 
 function guessedWord() {
