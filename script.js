@@ -27,9 +27,16 @@ function handleGuess(chosenLetter) {
       checkIfGameWon();
     } else if (answer.indexOf(chosenLetter) === -1) {
       mistakes++;
-      updateMistakes();
-      checkIfGameLost();
+        //   document.getElementById('wrongLetter').value=chosenLetter+' '
+        updateMistakes();
+        checkIfGameLost();
+        typeWrongLetter(chosenLetter)
     }
+  }
+  function typeWrongLetter(letter) {
+      let wrongLetter=[]
+      wrongLetter.forEach(item=>
+        )
   }
   function checkIfGameWon() {
     if (hiddenWord === answer) {
