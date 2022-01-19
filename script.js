@@ -39,6 +39,7 @@ function handleGuess(chosenLetter) {
   function checkIfGameWon() {
     if (hiddenWord === answer) {
       document.getElementById('keyboard').innerHTML = 'You Won!!!';
+      document.getElementById('keyboard').classList.add('h3','text-success')
     }
   }
   function updateMistakes() {
@@ -52,6 +53,7 @@ function handleGuess(chosenLetter) {
       document.getElementById('keyboard').classList.add('h3','text-danger')
     }
   }
+
   function Start() {
     mistakes = 0;
     guessed = [];
@@ -62,6 +64,7 @@ function handleGuess(chosenLetter) {
     updateMistakes();
     generateAlphabet();
   }
+
  function startTimer() {
      let minute=9
      let second=60
@@ -87,8 +90,9 @@ function handleGuess(chosenLetter) {
         }
      },1000)
  }
+
 function guessedWord() {
-    hiddenWord = answer.split('').map(letter=>(guessed.indexOf(letter) >= 0? letter:"_")).join(' ');
+    hiddenWord = answer.split('').map(letter=>(guessed.indexOf(letter) >= 0? letter:"-")).join('');
     // console.log(hiddenWord)
     document.getElementById('word').value=hiddenWord
 }
