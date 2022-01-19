@@ -35,6 +35,9 @@ function handleGuess(chosenLetter) {
       document.getElementById('keyboard').innerHTML = 'You Won!!!';
     }
   }
+  function updateMistakes() {
+    document.getElementById('mistakes').innerHTML = mistakes;
+  }
   
 
 function guessedWord() {
