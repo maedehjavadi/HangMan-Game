@@ -31,7 +31,7 @@ function handleGuess(chosenLetter) {
     }
   }
   function checkIfGameWon() {
-    if (wordStatus === answer) {
+    if (hiddenWord === answer) {
       document.getElementById('keyboard').innerHTML = 'You Won!!!';
     }
   }
