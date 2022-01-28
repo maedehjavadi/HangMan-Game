@@ -106,7 +106,3 @@ function handleGuess(chosenLetter) {
             }
          },1000)
     }
-
-// generateAlphabet()
-// randWord()
-// guessedWord()
