@@ -46,7 +46,7 @@ function handleGuess(chosenLetter) {
     } else if (answer.indexOf(chosenLetter) === -1) {
       
     /* TYPING WRONG LETTERS */
-      let wrongLetters=guessed.filter(letter=>answer.indexOf(letter)<0? letter:null).join(" - ")
+      let wrongLetters=guessed.filter(letter=>answer.indexOf(letter)<0? letter:null).join(" , ")
       document.getElementById('wrongLetter').value=wrongLetters
       // console.log(wrongLetters)
 
@@ -62,7 +62,7 @@ function handleGuess(chosenLetter) {
     if (hiddenWord === answer) {
       document.getElementById('keyboard').innerHTML = 'You Won!!!'
       document.getElementById('keyboard').classList.add('h3','text-success')
-      // pauseTimer()
+      stopTimer()
     }
   }
 
@@ -76,33 +76,38 @@ function handleGuess(chosenLetter) {
       
       document.getElementById('keyboard').innerHTML = `You Lost!!!</br>The answer was: ${answer}`
       document.getElementById('keyboard').classList.add('h3','text-danger')
-      // pauseTimer()
+      stopTimer()
     }
   }
- 
+  let Interval=null
+
   function startTimer() {
-     let minute=9
-     let second=60
-     setInterval(
-           function(){
-            if (minute == 0 && seconed==1) {
-                document.getElementById('timer').innerHTML="00:00"
-            }else{
-                second--;
-                if (second==0) {
-                    minute--
-                    second=60
-                    if (minute==0) {
-                        minute=minute
-                    }
-                if(minute.toString().length==1){
-                    minute="0"+minute
+    stopTimer()
+    let minute=9
+    let second=60
+      Interval=setInterval(function(){
+        if (minute == 0 && seconed==1) {
+            document.getElementById('timer').innerHTML="00:00"
+        }else{
+            second--;
+            if (second==0) {
+                minute--
+                second=60
+                if (minute==0) {
+                    minute=minute
+                    // clearInterval(runTime)
                 }
-                if(second.toString().length==1){
-                    second="0"+second
-                }
-                }
-            document.getElementById('timer').innerHTML=minute + ":" + second
+            if(minute.toString().length==1){
+                minute="0"+minute
             }
-         },1000)
+            if(second.toString().length==1){
+                second="0"+second
+            }
+            }
+        document.getElementById('timer').innerHTML=minute + ":" + second
+        }
+     },1000)
+    }
+    function stopTimer() {
+      clearInterval(Interval)
     }
